@@ -1,33 +1,26 @@
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
 import Home from './views/Home';
-import Destination from './views/Destination';
-import Crew from './views/Crew';
-import Technology from './views/Technology';
+import Login from './views/Login';
+import Signup from './views/Signup';
+import ChatPage from './views/ChatPage';
+import DMPage from './views/DMPage';
+import Profile from './views/Profille';
+
 function App() {
 
   return (
     <Router>
-    <div className="App">
-        <Navbar />
-        <div className="content">
-          <Switch>
-              <Route exact path='/'>
-                <Home />
-              </Route>
-              <Route path='/destination/:place'>
-                <Destination />
-              </Route>
-              <Route path='/crew'>
-                <Crew />
-              </Route>
-              <Route path ='/technology'>
-                <Technology />
-              </Route>
-          </Switch>
-        </div> 
-    </div>
+      <div className="App">
+        <Switch>
+          <Route exact path='/login' component={Login} />
+          <Route path='/signup' component={Signup} />
+          <Route path='/profile/:user' component={Profile} />
+          <Route path='/chat/:deviceScreen' component={ChatPage} />
+          <Route path='/message/:id' component={DMPage} />
+          <Home />
+        </Switch>
+      </div>
     </Router>
   );
 }

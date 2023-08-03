@@ -1,25 +1,26 @@
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import Background from "../components/Background";
+import { Link } from "react-router-dom";
 
 const Home = () => {
     return ( 
-        <main className="home max-w-5xl p-4 mx-auto text-gray-300 text-center">
-            <div>
-                <span className="uppercase font-bold rounded-full">So, you want to travel to</span>
-                <span className="text-8xl font-fontBig my-5 text-white uppercase block">Space</span>
-                <p>Let's face it; if you want to go to space, you might as well genuinely go to 
-                    outer space and not hover kind of on the edge of it. Well sit back, and relax 
-                    because we'll give you a truly out of this world experience!</p> 
-            </div>
-            <Link to='/destination/Moon'>
-                <div className="exploreBtn uppercase bg-white text-blue-950 text-center
-                    h-36 w-36 text-xl mx-auto my-5 grclassName flex items-center justify-center 
-                    rounded-full">
-                    <p>Explore</p>
+        <section className="w-screen h-screen flex justify-center items-center">
+            <img src={require('../assets/images/color_doodle.png')} className="absolute top-0 left-0 w-full h-full object-cover -z-10" alt="" />
+
+            <div className="px-6">
+                <h3 className="text-3xl font-semibold z-10 relative">
+                    Welcome To
+                </h3>
+                <h1 className="font-extrabold text-7xl text-green-500">
+                    Chatter
+                </h1>
+                <p className="font-extralight">...a bold and expressive new way to communicate</p>
+
+                <div className="grid md:grid-cols-2 mt-10">
+                    <Link to='/signup' className="text-center px-6 py-2 border-2 border-green-500 bg-green-500 text-white w-full block my-1 rounded-xl">Sign Up</Link>
+                    <Link to='/login' className="text-center px-6 py-2 border-2 border-green-500 w-full block my-1 rounded-xl">Log In</Link>
                 </div>
-            </Link>
-        <Background page={'home'} />    
-        </main>
+            </div>
+
+        </section>
      );
 }
  
